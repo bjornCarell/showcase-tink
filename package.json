@@ -1,0 +1,43 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server and heroku scripts",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "cd client && npm start",
+    "server": "babel-node -r esm server/server.js",
+    "test": "NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file mocha-setup.js",
+    "dev": "concurrently --kill-others-on-fail \"nodemon --exec babel-node -r esm server/server.js\" \"npm run client\"",
+    "postinstall": "cd client && npm install"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7",
+    "axios": "^0.21.1",
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "request": "^2.88.2"
+  },
+  "author": "Björn Carell",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/register": "^7.13.16",
+    "chai": "^4.3.4",
+    "chai-exclude": "^2.0.3",
+    "chai-http": "^4.3.0",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "mocha": "^8.3.2",
+    "prettier": "^2.2.1",
+    "regenerator-runtime": "^0.13.7",
+    "supertest": "^6.1.3"
+  }
+}
