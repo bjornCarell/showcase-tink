@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useCategories } from '../../../hooks/useCategories';
+import { Locales } from '../../../constants/locales';
 import { TableWrapper } from '../../atoms/TableWrapper/TableWrapper';
 import { Table } from '../../atoms/Table/Table';
 import { TableHead } from '../../atoms/TableHead/TableHead';
 import { TableBody } from '../../atoms/TableBody/TableBody';
 import { TableRow } from '../../atoms/TableRow/TableRow';
 import { TableCell } from '../../atoms/TableCell/TableCell';
+import { Container } from '../../atoms/Container/Container';
 
 export const Categories = (): JSX.Element => {
   const [locale, setLocale] = useState<string>('en_US');
@@ -16,34 +18,39 @@ export const Categories = (): JSX.Element => {
   };
 
   return (
-    <TableWrapper>
-      <h1>Categories</h1>
-      <select onChange={(e) => onSelectLocale(e)}>
-        <option value="en_US">English US</option>
-        <option value="sv_SE">Swedish</option>
-      </select>
-      <Table data-test-id="categories-list">
-        <TableHead>
-          <TableRow>
-            <TableCell>Type</TableCell>
-            <TableCell>Type Name</TableCell>
-            <TableCell>Primary Name</TableCell>
-            <TableCell>Secondary Name</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
+    <Container>
+      <TableWrapper>
+        <h1>Categories</h1>
+        <select onChange={(e) => onSelectLocale(e)}>
           {
-            state.categories.map((category) => (
-              <TableRow key={category.code}>
-                <TableCell>{category.type}</TableCell>
-                <TableCell>{category.typeName}</TableCell>
-                <TableCell>{category.primaryName}</TableCell>
-                <TableCell>{category.secondaryName}</TableCell>
-              </TableRow>
+            Object.entries(Locales).map(([key, value]) => (
+              <option value={value}>{key}</option>
             ))
           }
-        </TableBody>
-      </Table>
-    </TableWrapper>
+        </select>
+        <Table data-test-id="categories-list">
+          <TableHead backgroundcolor="yes" colorLight>
+            <TableRow>
+              <TableCell>Type Name</TableCell>
+              <TableCell>Primary Name</TableCell>
+              <TableCell>Secondary Name</TableCell>
+              <TableCell>Code</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {
+              state.categories.map((category) => (
+                <TableRow key={category.code}>
+                  <TableCell>{category.typeName}</TableCell>
+                  <TableCell>{category.primaryName}</TableCell>
+                  <TableCell>{category.secondaryName}</TableCell>
+                  <TableCell>{category.code}</TableCell>
+                </TableRow>
+              ))
+            }
+          </TableBody>
+        </Table>
+      </TableWrapper>
+    </Container>
   );
 };

@@ -7,7 +7,7 @@ export const TableRow = styled(({ ...rest }) => <MuiTableRow {...rest} />)`
     && `
       && {
         &:nth-of-type(even) {
-          background-color: ${props.theme.color.grey};
+          background-color: ${props.theme.color.grey[100]};
         }
       }
   `}
