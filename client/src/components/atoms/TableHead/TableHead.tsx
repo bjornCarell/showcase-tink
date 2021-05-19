@@ -4,8 +4,9 @@ import MuiTableHead from '@material-ui/core/TableHead';
 import { TableHeadProps } from '@material-ui/core/TableHead/TableHead';
 
 export type StyledTableHeadProps = {
-  backgroundcolor?: string,
-  colorLight?: boolean
+  backgroundcolor?: boolean,
+  colorLight?: boolean,
+  padding?: boolean,
 }
 
 export const TableHead = styled(
@@ -17,6 +18,7 @@ export const TableHead = styled(
     text-transform: uppercase;
     font-weight: 900;
     color: ${(props) => (props.colorLight ? props.theme.color.white.primary : 'inherit')};
+    padding: ${(props) => (props.padding ? props.theme.spacing.medium : props.theme.spacing.small)};
   }
 
   background-color: ${(props) => (

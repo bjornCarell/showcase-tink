@@ -40,9 +40,9 @@ export const theme = {
   fontSize: {
     small: '1.4rem',
     medium: '1.6rem',
-    large: '2.6rem',
-    xl: '4.22rem',
-    xxl: '6.85rem',
+    large: '2rem',
+    xl: '2.6rem',
+    xxl: '3rem',
   },
   fontWeight: {
     small: 200,

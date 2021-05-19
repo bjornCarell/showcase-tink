@@ -4,10 +4,14 @@ export type StyledContainerProps = {
   fullVertical?: string,
   small?: string,
   full?: string,
+  margin?: boolean,
 }
 
 export const Container = styled.div<StyledContainerProps>`
-    margin: 0 auto; 
+    margin: ${(props) => {
+    if (props.margin) return '2rem';
+    return '0 auto';
+  }}; 
     padding-bottom: ${(props) => {
     if (props.fullVertical) return 0;
     if (props.small) return '1.5rem';
