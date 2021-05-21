@@ -17,11 +17,11 @@ export const TableHead = styled(
   th {
     text-transform: uppercase;
     font-weight: 900;
-    color: ${(props) => (props.colorLight ? props.theme.color.white.primary : 'inherit')};
-    padding: ${(props) => (props.padding ? props.theme.spacing.medium : props.theme.spacing.small)};
+    color: ${(props) => (props.colorLight ? props.theme.color.white[100] : 'inherit')};
+    padding: ${(props) => (props.padding ? props.theme.spacing.M : props.theme.spacing.S)};
   }
 
   background-color: ${(props) => (
-    props.backgroundcolor ? props.theme.color.green.primary : 'transparent'
+    props.backgroundcolor ? props.theme.color.green[500] : 'transparent'
   )};
 `;
