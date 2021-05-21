@@ -9,8 +9,8 @@ export type baseStyleProps = {
 
 const baseStyle = css<baseStyleProps>`
     color: ${(props) => (props.light
-    ? props.theme.color.white.primary
-    : props.theme.color.black.primary
+    ? props.theme.color.white[100]
+    : props.theme.color.black[100]
   )};
     font-weight: 600;
     margin-bottom: ${(props) => props.noMargin && '0'};
@@ -24,27 +24,27 @@ const baseStyle = css<baseStyleProps>`
 `;
 
 export const HeadingOne = styled.h1`
-    font-size: ${(props) => props.theme.fontSize.xxl};
-    margin-bottom: ${(props) => props.theme.spacing.large};
+    font-size: ${(props) => props.theme.fontSize.XL};
+    margin-bottom: ${(props) => props.theme.spacing.L};
     ${baseStyle};
 `;
 export const HeadingTwo = styled.h2`
-    font-size: ${(props) => props.theme.fontSize.xl};
-    margin-bottom: ${(props) => props.theme.spacing.medium};
+    font-size: ${(props) => props.theme.fontSize.XL};
+    margin-bottom: ${(props) => props.theme.spacing.M};
     ${baseStyle};
 `;
 export const HeadingThree = styled.h3`
-    font-size: ${(props) => props.theme.fontSize.large};
-    margin-bottom: ${(props) => props.theme.spacing.small};
+    font-size: ${(props) => props.theme.fontSize.L};
+    margin-bottom: ${(props) => props.theme.spacing.S};
     ${baseStyle};
 `;
 export const HeadingFour = styled.h4`
-    font-size: ${(props) => props.theme.fontSize.medium};
-    margin-bottom: ${(props) => props.theme.spacing.xs};
+    font-size: ${(props) => props.theme.fontSize.M};
+    margin-bottom: ${(props) => props.theme.spacing.XS};
     ${baseStyle};
 `;
 export const HeadingFive = styled.h5`
-    font-size: ${(props) => props.theme.fontSize.small};
-    margin-bottom: ${(props) => props.theme.spacing.xss};
+    font-size: ${(props) => props.theme.fontSize.S};
+    margin-bottom: ${(props) => props.theme.spacing.XS};
     ${baseStyle};
 `;

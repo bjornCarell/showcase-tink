@@ -29,11 +29,11 @@ export const Paper = styled(
     `}
     ${(props) => props.marginBottom
       && css`
-        margin-bottom: ${props.theme.spacing.medium};
+        margin-bottom: ${props.theme.spacing.M};
       `}
 
     border-radius: ${(props) => (props.radius
-    ? `${props.theme.radius.medium}`
+    ? `${props.theme.radius.M}`
     : '0rem')};
 
     box-shadow: ${(props) => (props.shadow ? `${props.theme.shadow.around}` : '0px')};

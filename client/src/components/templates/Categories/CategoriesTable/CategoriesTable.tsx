@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { useCategories } from '../../../hooks/useCategories';
-import { localesInOxfordCategories } from '../../../constants/locales';
-import { TableWrapper } from '../../atoms/TableWrapper/TableWrapper';
-import { Table } from '../../atoms/Table/Table';
-import { TableHead } from '../../atoms/TableHead/TableHead';
-import { TableBody } from '../../atoms/TableBody/TableBody';
-import { TableRow } from '../../atoms/TableRow/TableRow';
-import { TableCell } from '../../atoms/TableCell/TableCell';
-import { Paper } from '../../atoms/Paper/Paper';
-import { FlexContainer, FlexItem } from '../../atoms/Flex/Flex';
-import { Heading } from '../../atoms/Heading/Heading';
+import { useCategories } from '../../../../hooks/useCategories';
+import { localesInOxfordCategories } from '../../../../constants/locales';
+import { TableWrapper } from '../../../atoms/TableWrapper/TableWrapper';
+import { Table } from '../../../atoms/Table/Table';
+import { TableHead } from '../../../atoms/TableHead/TableHead';
+import { TableBody } from '../../../atoms/TableBody/TableBody';
+import { TableRow } from '../../../atoms/TableRow/TableRow';
+import { TableCell } from '../../../atoms/TableCell/TableCell';
+import { Paper } from '../../../atoms/Paper/Paper';
+import { FlexContainer, FlexItem } from '../../../atoms/Flex/Flex';
+import { Heading } from '../../../atoms/Heading/Heading';
 
 export const CategoriesTable = ():JSX.Element => {
   const [locale, setLocale] = useState<string>('en_US');
